@@ -1,5 +1,6 @@
 ![BADGE-gradle](https://github.com/Antoine280401/ClockSystem-TP/actions/workflows/gradle.yml/badge.svg)
 ![BADGE-pmd](https://github.com/Antoine280401/ClockSystem-TP/actions/workflows/pmd.yml/badge.svg)
+![BADGE-secu](https://github.com/Antoine280401/ClockSystem-TP/actions/workflows/codeql.yml/badge.svg)
 
 # ClockSystem
 
