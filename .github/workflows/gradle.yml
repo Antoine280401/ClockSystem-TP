@@ -20,7 +20,7 @@ jobs:
     permissions:
       contents: read
     env:
-      JAVA_TOOL_OPTIONS: "-Djava.awt.headless=true"
+      JAVA_TOOL_OPTIONS: "-java.awt.headless=true"
 
     steps:
     - uses: actions/checkout@v6
