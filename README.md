@@ -1,4 +1,4 @@
-![alt text] https://github.com/Antoine280401/ClockSystem-TP/actions/workflows/gradle.yml/badge.svg
+![BADGE](https://github.com/Antoine280401/ClockSystem-TP/actions/workflows/gradle.yml/badge.svg)
 
 # ClockSystem
 
