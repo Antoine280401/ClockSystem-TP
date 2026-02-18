@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      JAVA_TOOL_OPTIONS: "-Djava.awt.headless=true"
 
     steps:
     - uses: actions/checkout@v6
@@ -34,8 +36,6 @@ jobs:
       uses: gradle/actions/setup-gradle@v5
       with:
         gradle-version: '9.1.0'
-      env:
-        JAVA_TOOL_OPTIONS: "-Djava.awt.headless=true"
         
 
     - name: Build with Gradle 9.1.0
