@@ -16,6 +16,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  schedule:
+    - cron: '20 3 * * 0'
 
 permissions:
   contents: read
@@ -49,10 +51,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     
+    # On initialise CodeQL en lui disant explicitement d'attendre un build manuel
     - name: Initialize CodeQL
       uses: github/codeql-action/init@9e907b5e64f6b83e7804b09294d44122997950d6 # v4.32.3
       with:
         languages: 'java'
+        build-mode: manual
         queries: security-experimental,security-extended,security-and-quality
 
     - name: Set up JDK 25
@@ -60,10 +64,16 @@ jobs:
       with:
         java-version: '25'
         distribution: 'temurin'
+
     - name: Start Xvfb
       run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
+
+    # On précise la version ici pour que l'exécutable 'gradle' soit reconnu par CodeQL
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@f29f5a9d7b09a7c6b29859002d29d24e1674c884 # v5.0.1
+      with:
+        gradle-version: '9.1.0'
+
     - name: Build with Gradle
       run: gradle build
 
