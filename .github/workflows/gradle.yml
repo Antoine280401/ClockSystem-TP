@@ -33,10 +33,10 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v5
       with:
-        gradle-version: '8.10'
+        gradle-version: '9.1.0'
         
 
-    - name: Build with Gradle 8.10
+    - name: Build with Gradle 9.1.0
       run: gradle build
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
