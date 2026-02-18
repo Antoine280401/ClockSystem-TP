@@ -52,6 +52,9 @@ jobs:
 
     - name: Build with Gradle 9.1.0
       run: gradle build
+    - uses: actions/upload-artifact@v4
+      with:
+        path: app/build/reports/tests
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
